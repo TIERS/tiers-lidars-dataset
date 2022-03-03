@@ -7,7 +7,14 @@
 <img src="./imgs/intro.jpg" width="800px">
 
 </div>
-<p align="center">Figure 1. Sample Images</p>
+<p align="left">Figure 1.  (Left) Front view of the multi-modal data acquisition system. Next to each sensor, we show the individual coordinate frames for the generated point clouds. (Right) Samples of map data form different dataset sequences. From left to right and top to down, we display maps generated from a forest, an urban area, an open road and a large indoors hall, respectively.</p>
+
+
+<div align=center>
+<img src="./imgs/data_sample.jpg" width="800px">
+</div>
+
+<p align="left"> Figure 2. Our dataset was captured by a rich suite of sensors. Subsets of the data from the *Indoor04* sequence are visualized here. The leftmost column shows the lidar data from Avia and Horizon; the second column shows the lidar data from OS1 and OS0; the third column shows the data from the VLP-16 and depth image from L515. The rightmost column shows the RGB image from L515 and range images from 0S1 and OS0..</p>
 
 ## ABSTRACT:
 
@@ -42,9 +49,9 @@ Physical drawings and schematics of the ground robot is given below. The unit of
 <div align=center>
 <img src="./imgs/scales.jpg" width="800px">
 </div>
+<p align="left">Figure 3. Our data collecting platform, front view RGB (left),top view (middle) and front view (right).</p>
 
-<p align="left">Figure 2. The GAEA Ground Robot Equipped with a Full Sensor Suite.The directions of the sensors are marked in different colors,red for X,green for Y and blue for Z.</p>
- 
+
 
 ### 2.2 Sensor parameters
 Sensor specification for the presented dataset. Angular resolution is configurable in the OS1-64 (varying the vertical FoV). Livoxlidars have a non-repetitive scan pattern that delivers higher angular resolution with longer integration times. Range is based on manufacturerinformation, with values corresponding to 80% Lambertian reflectivity and 100 klx sunlight, except for the L515 lidar camera.
@@ -92,17 +99,14 @@ The rostopics of our rosbag sequences are listed as follows:
 </div> -->
 
 <!-- <p align="left">Figure 3. A sample video with fish-eye image(both forward-looking and sky-pointing),perspective image,thermal-infrared image,event image and lidar odometry</p> -->
-
  
-
-
-### 3.1 Outdoors
 
 <div align=center>
 <img src="./imgs/data_sequences.jpg" width="400px">
-<p align="center">Sequences.</p>
-  
+<p align="center">List of data sequences in our dataset (V: Velodyne VLP-16, H:Livox Horizon, A:Livox Avia, O_0: Ouster OS0, O_1: Ouster OS1.</p>
+</div>
 
+### 3.1 Main Dataset
 
 Sequence Name|Collection Date|Total Size|Duration|Features|Rosbag 
 --|:--|:--:|--:|--:|--: 
@@ -117,24 +121,40 @@ Indoor05(Corridor)|2022-02-09|141.5g|551s|day|(Rosbag: Uploading)
 Road01|2022-02-20|47.6g|110s|day|(Rosbag: Uploading)  
 Road02|2022-02-20|212.7g|487s|day|(Rosbag: Uploading)  
 
-</div>
+### 3.2 Other Data
+Sequence Name|Collection Date|Total Size|Duration|Features|Sensors|Rosbag 
+--|:--|:--:|--:|--:|--:|--: 
+LidarsCali|2022-02-11|21.9g|19.1s|room| |(Rosbag: Uploading)  
 
-## 4. CONFIGURERATION FILES
-For convenience of evaluation, we provide configuration files of some well-known SLAM systems as below:
+
+## 4. Tested SLAM Result
+### 4.1 Trajectory Result
+We teseted  some well-known SLAM systems as below:
  
 [LeGO-LOAM](https://github.com/RobustFieldAutonomyLab/LeGO-LOAM),
-
-[LIVOX-MAPPING](https://github.com/Livox-SDK/livox_mapping),
-
+ 
 [FAST_LIO](https://github.com/hku-mars/FAST_LIO),
 
+[LIO_LIVOX](https://github.com/Livox-SDK/LIO-Livox),
+ 
+  
+<div align=center>
+<img src="./imgs/traj_result.jpg" width="800px">
+<p align="center">Estimated trajectories. Top row: Indoor01, Indoor02, Indoor03, Forest02. Bottom row: Forest01, Road02, Indoor04, Indoor05.</p>
+</div>
  
 
-## 5.DEVELOPMENT TOOLKITS
-### 5.1 Extracting Images
+### 4.2 Mapping Quality Result
+<div align=center>
+<img src="./imgs/parking_signal.jpg" width="800px">
+<p align="center">Qualitative comparison of the mapping quality. Top row showm the rgb image, map LIOL Horizon, FLIO OS0. Bottom row shows a parking signs in rgb image, and mapping result from Horizon-based LIOL, Horizon, Avia, OS0, and OS1-based FLIO, and Velodyne's LeGo-LOAM maps, respectively.</p>
+</div>
+
  
-
-
+## 5.DEVELOPMENT TOOLKITS 
+### 5.1 Frame id reset
+Rosbag recoreds message with their raw frame_id. If user need to show or run multiple lidar same time, we use [srv_tools](https://github.com/srv/srv_tools) to change frame_id of each topics. 
+  
 ### 5.2 Evaluation
 We use open-source tool [evo](https://github.com/MichaelGrupp/evo) for evalutation. 
 
