@@ -4,17 +4,23 @@
 # Multi-Modal Lidar Dataset for Benchmarking General-Purpose Localization and Mapping Algorithms 
 
 <div align=center>
-<img src="./imgs/intro.jpg" width="800px">
+<img src="./imgs/intro.jpg" width="1000px">
 
 </div>
-<p align="left">Figure 1.  (Left) Front view of the multi-modal data acquisition system. Next to each sensor, we show the individual coordinate frames for the generated point clouds. (Right) Samples of map data form different dataset sequences. From left to right and top to down, we display maps generated from a forest, an urban area, an open road and a large indoors hall, respectively.</p>
+<!-- <p align="left">Figure 1.  (Left) Front view of the multi-modal data acquisition system. Next to each sensor, we show the individual coordinate frames for the generated point clouds. (Right) Samples of map data form different dataset sequences. From left to right and top to down, we display maps generated from a forest, an urban area, an open road and a large indoors hall, respectively.</p> -->
 
 
 <div align=center>
-<img src="./imgs/data_sample.jpg" width="800px">
+<img src="./imgs/data_sample.jpg" width="1000px">
 </div>
+ 
+<p align="left"> Figure 2. Our dataset was captured by a rich suite of sensors. Subsets of the data from the *Indoor04* sequence are visualized here. The leftmost column shows the lidar data from [Avia](https://www.livoxtech.com/avia) and Horizon; the second column shows the lidar data from OS1 and OS0; the third column shows the data from the VLP-16 and depth image from L515. The rightmost column shows the RGB image from L515 and range images from 0S1 and OS0..</p>
+ 
 
-<p align="left"> Figure 2. Our dataset was captured by a rich suite of sensors. Subsets of the data from the *Indoor04* sequence are visualized here. The leftmost column shows the lidar data from Avia and Horizon; the second column shows the lidar data from OS1 and OS0; the third column shows the data from the VLP-16 and depth image from L515. The rightmost column shows the RGB image from L515 and range images from 0S1 and OS0..</p>
+Indoor data(Calibrate Sequence) |  OpenRoad SLAM example(Road02 Sequence)
+:-------------------------:|:-------------------------:
+![](./imgs/sample_data.gif)  |  ![](./imgs/road_data.gif)
+ 
 
 ## ABSTRACT:
 
@@ -120,7 +126,7 @@ Forest03|2021-09-28|7.3g|717s|Autumn|[Rosbag](https://utufi.sharepoint.com/:u:/s
 Indoor01|2022-04-27|49.3g|114s|day|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/EawwFYGOurRNlcUZfvrwEfcBlnW20VTIYCPLm5VJieeHWw?e=CLjB2n)|MOCAP[link](./data/ground_truth/indoor01_optitrack.csv)  
 Indoor02|2022-02-21|16.7g|42.3s|day|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/EYXGcc1Z-y1FpnDwQ1geIoEBovXvLfoxZwt36J1_t2PugA?e=UwHhXd)|MOCAP[link](./data/ground_truth/indoor02_optitrack.csv)  
 Indoor03|2021-02-21|19.2g|46.7s|day|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/EVGuZFh7fpBKtQSMKoGb8ncB3Aaow-UoWJnfYyiCd4V9sA?e=bteL7Y)|MOCAP[link](./data/ground_truth/indoor03_optitrack.csv)
-Indoor04(Hall)|2022-02-09|92.8g|248s|day|Rosbag: Uploading|SLAM[link](./data/ground_truth/indoor04_fastlio_os128.csv)  
+Indoor04(Hall)|2022-02-09|92.8g|248s|day|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/EZn83qXg-FdDhg7qydCROZEBizsL1Y5V7yebYX1ihrHkhg?e=dhIKqu)|SLAM[link](./data/ground_truth/indoor04_fastlio_os128.csv)  
 Indoor05(Corridor)|2022-02-09|141.5g|551s|day|Rosbag: Uploading| SLAM[link](./data/ground_truth/indoor05_fastlio_os128.csv)
 Road01|2022-02-20|47.6g|110s|day|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/EdIVc56d1wVHj2oniOha6bYBWUptX7l8r3GGsd5Ur4DJfQ?e=15ILey)|-   
 Road02|2022-02-20|212.7g|487s|day|Rosbag: Uploading|SLAM [link](./data/ground_truth/road02_fastlio_os128.csv) 
@@ -154,9 +160,7 @@ We teseted  some well-known SLAM systems as below:
 <p align="center">Estimated trajectories. Top row: Indoor01, Indoor02, Indoor03, Forest02. Bottom row: Forest01, Road02, Indoor04, Indoor05.</p>
 </div>
  
- 
-
- 
+  
 ## 5.DEVELOPMENT TOOLKITS 
 ### 5.1 Frame id reset
 Rosbag recoreds message with their raw frame_id. If user need to show or run multiple lidar same time, we use [srv_tools](https://github.com/srv/srv_tools) to change frame_id of each topics. 
@@ -175,7 +179,13 @@ For IMU intrinsics,visit [Imu_utils](https://github.com/gaowenliang/imu_utils)
 For extrinsics between cameras and LIVOX Lidar, visit [
 livox_camera_lidar_calibration](https://github.com/Livox-SDK/livox_camera_lidar_calibration)  
 
- 
+### 5.4 Sensor Info 
+[Avia](https://www.livoxtech.com/avia),  
+[Horizon](https://www.livoxtech.com/horizon),  
+[OS0](https://ouster.com/products/scanning-lidar/os0-sensor/),    
+[OS1](https://ouster.com/products/scanning-lidar/os1-sensor/) ,   
+[Vlp-16](https://velodynelidar.com/products/puck/),     
+[Realsense L515](https://www.intelrealsense.com/lidar-camera-l515/)  
 
 ## 6.ACKNOWLEGEMENT
 This research work is supported by the Academy of Finland's AeroPolis project (Grant 348480) and the Finnish Foundation for Technology Promotion (Grants 7817 and 8089).
