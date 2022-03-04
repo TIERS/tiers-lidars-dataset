@@ -7,14 +7,14 @@
 <img src="./imgs/intro.jpg" width="1000px">
 
 </div>
-<!-- <p align="left">Figure 1.  (Left) Front view of the multi-modal data acquisition system. Next to each sensor, we show the individual coordinate frames for the generated point clouds. (Right) Samples of map data form different dataset sequences. From left to right and top to down, we display maps generated from a forest, an urban area, an open road and a large indoors hall, respectively.</p> -->
+<p align="left">(Left) Front view of the multi-modal data acquisition system. (Right) Samples of map data form different dataset sequences. From left to right and top to down, we display maps generated from a forest, an urban area, an open road and a large indoors hall, respectively.</p>
 
 
 <div align=center>
 <img src="./imgs/data_sample.jpg" width="1000px">
 </div>
  
-<p align="left"> Figure 2. Our dataset was captured by a rich suite of sensors. Subsets of the data from the *Indoor04* sequence are visualized here. The leftmost column shows the lidar data from [Avia](https://www.livoxtech.com/avia) and Horizon; the second column shows the lidar data from OS1 and OS0; the third column shows the data from the VLP-16 and depth image from L515. The rightmost column shows the RGB image from L515 and range images from 0S1 and OS0..</p>
+<p align="left"> Our dataset was captured by a rich suite of sensors. Subsets of the data from the *Indoor04* sequence are visualized here. The leftmost column shows the lidar data from [Avia](https://www.livoxtech.com/avia) and Horizon; the second column shows the lidar data from OS1 and OS0; the third column shows the data from the VLP-16 and depth image from L515. The rightmost column shows the RGB image from L515 and range images from 0S1 and OS0..</p>
  
 
 Indoor data(Calibrate Sequence) |  OpenRoad SLAM example(Road02 Sequence)
