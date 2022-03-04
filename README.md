@@ -1,7 +1,7 @@
 
 
 
-# Multi-Modal Lidar Dataset for Benchmarking General-PurposeLocalization and Mapping Algorithms 
+# Multi-Modal Lidar Dataset for Benchmarking General-Purpose Localization and Mapping Algorithms 
 
 <div align=center>
 <img src="./imgs/intro.jpg" width="800px">
@@ -56,36 +56,40 @@ Physical drawings and schematics of the ground robot is given below. The unit of
 ### 2.2 Sensor parameters
 Sensor specification for the presented dataset. Angular resolution is configurable in the OS1-64 (varying the vertical FoV). Livoxlidars have a non-repetitive scan pattern that delivers higher angular resolution with longer integration times. Range is based on manufacturerinformation, with values corresponding to 80% Lambertian reflectivity and 100 klx sunlight, except for the L515 lidar camera.
 <div align=center>
-<img src="./imgs/sensors.jpg" width="600px">
+<img src="./imgs/sensors.jpg" width="800px">
 </div>
 
  
 
 The rostopics of our rosbag sequences are listed as follows:
 
-* VLP-16 LIDAR : `/velodyne_points  sensor_msgs/PointCloud2`  
-* OS0 LIDAR :  `/os_cloud_node/imu           : sensor_msgs/Imu  `  ,       
-            ` /os_cloud_node/points               : sensor_msgs/PointCloud2 `,
-            `/img_node/nearir_image               : sensor_msgs/Image  ` ,      
-            ` /img_node/range_image               : sensor_msgs/Image  `  ,     
-            ` /img_node/reflec_image              : sensor_msgs/Image   `  ,   
+* VLP-16 LIDAR : \
+`/velodyne_points  sensor_msgs/PointCloud2`  
+* OS0 LIDAR :  
+    `/os_cloud_node/imu           : sensor_msgs/Imu  `,       
+                ` /os_cloud_node/points               : sensor_msgs/PointCloud2 `, \
+                `/img_node/nearir_image               : sensor_msgs/Image  ` ,      
+                ` /img_node/range_image               : sensor_msgs/Image  `  ,     
+                ` /img_node/reflec_image              : sensor_msgs/Image   `  ,   
 
-* OS1 LIDAR :`   /os_cloud_nodee/imu        : sensor_msgs/Imu ` ,         
+* OS1 LIDAR : \
+`   /os_cloud_nodee/imu        : sensor_msgs/Imu ` ,         
              `/os_cloud_nodee/points        : sensor_msgs/PointCloud2  `,           
             `/img_nodee/nearir_image          : sensor_msgs/Image `,        
             ` /img_nodee/range_image           : sensor_msgs/Image `,       
             ` /img_nodee/reflec_image       : sensor_msgs/Image `,        
             ` /img_nodee/signal_image        : sensor_msgs/Image ` ,  
 
-* Horizon LIDAR : `/livox/imu : sensor_msgs/Imu`            
+* Horizon LIDAR : \
+`/livox/imu : sensor_msgs/Imu`            
                 `/livox/lidar : livox_ros_driver/CustomMsg ` 
-* AVIA LIDAR : 
+* AVIA LIDAR : \
     `/avia/livox/imu  sensor_msgs/Imu `,
     `/avia/livox/lidar  livox_ros_driver/CustomMsg`,
-* L515 LIDAR CAMERA: 
-    `/cam_1/color/image_raw             : sensor_msgs/Image `        
-    `/cam_1/depth/image_rect_raw            : sensor_msgs/Image `
-* MOCAP SYSTEM:  
+* L515 LIDAR CAMERA: \
+    `/cam_1/color/image_raw             : sensor_msgs/Image `,        
+    `/cam_1/depth/image_rect_raw            : sensor_msgs/Image `,
+* MOCAP SYSTEM:  \
     `/vrpn_client_node/optitest/pose    6471 msgs    : geometry_msgs/PoseStamped`
  
  
@@ -102,33 +106,33 @@ The rostopics of our rosbag sequences are listed as follows:
  
 
 <div align=center>
-<img src="./imgs/data_sequences.jpg" width="400px">
+<img src="./imgs/data_sequences.jpg" width="600px">
 <p align="center">List of data sequences in our dataset (V: Velodyne VLP-16, H:Livox Horizon, A:Livox Avia, O_0: Ouster OS0, O_1: Ouster OS1.</p>
 </div>
 
 ### 3.1 Main Dataset
 
-Sequence Name|Collection Date|Total Size|Duration|Features|Rosbag 
---|:--|:--:|--:|--:|--: 
-Forest01|2022-02-08|21.9g|62s|Winter,Square|(Rosbag: Uploading)  
-Forest02|2022-02-08|22.4g|73s|Windter,Straight|(Rosbag: Uploading)  
-Forest03|2021-09-28|7.3g|717s|Autumn|(Rosbag: Uploading)  
-Indoor01|2022-04-27|49.3g|114s|day|(Rosbag: Uploading)  
-Indoor02|2022-02-21|16.7g|42.3s|day|(Rosbag: Uploading)  
-Indoor03|2021-02-21|19.2g|46.7s|day|(Rosbag: Uploading)  
-Indoor04(Hall)|2022-02-09|92.8g|248s|day|(Rosbag: Uploading)  
-Indoor05(Corridor)|2022-02-09|141.5g|551s|day|(Rosbag: Uploading)  
-Road01|2022-02-20|47.6g|110s|day|(Rosbag: Uploading)  
-Road02|2022-02-20|212.7g|487s|day|(Rosbag: Uploading)  
+Sequence Name|Collection Date|Total Size|Duration|Features|Rosbag|GroundTruth
+--|:--|:--:|--:|--:|--:|--:
+Forest01|2022-02-08|21.9g|62s|Winter,Square|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/ERuiTeOtX5FGs4GJPH9-DhYBQO-FUQkat3u4sSKwwpduPg?e=HfJXdP)| MOCAP[link](./data/ground_truth/forest01_optitrack.csv)
+Forest02|2022-02-08|22.4g|73s|Windter,Straight| [Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/EQjHj-L7UzhMuYoD9RzAJd0BdydMpIsy1ci7sdXvfgUzsA?e=wjeCOi)|MOCAP[link](./data/ground_truth/forest02_optitrack.csv)
+Forest03|2021-09-28|7.3g|717s|Autumn|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/ESw3g6p8c8hIia1_ffZLQQoB6jz2YoZX5E5j2A8EuuxcFg?e=qU6972)| -
+Indoor01|2022-04-27|49.3g|114s|day|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/EawwFYGOurRNlcUZfvrwEfcBlnW20VTIYCPLm5VJieeHWw?e=CLjB2n)|MOCAP[link](./data/ground_truth/indoor01_optitrack.csv)  
+Indoor02|2022-02-21|16.7g|42.3s|day|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/EYXGcc1Z-y1FpnDwQ1geIoEBovXvLfoxZwt36J1_t2PugA?e=UwHhXd)|MOCAP[link](./data/ground_truth/indoor02_optitrack.csv)  
+Indoor03|2021-02-21|19.2g|46.7s|day|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/EVGuZFh7fpBKtQSMKoGb8ncB3Aaow-UoWJnfYyiCd4V9sA?e=bteL7Y)|MOCAP[link](./data/ground_truth/indoor03_optitrack.csv)
+Indoor04(Hall)|2022-02-09|92.8g|248s|day|Rosbag: Uploading|SLAM[link](./data/ground_truth/indoor04_fastlio_os128.csv)  
+Indoor05(Corridor)|2022-02-09|141.5g|551s|day|Rosbag: Uploading| SLAM[link](./data/ground_truth/indoor05_fastlio_os128.csv)
+Road01|2022-02-20|47.6g|110s|day|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/EdIVc56d1wVHj2oniOha6bYBWUptX7l8r3GGsd5Ur4DJfQ?e=15ILey)|-   
+Road02|2022-02-20|212.7g|487s|day|Rosbag: Uploading|SLAM [link](./data/ground_truth/road02_fastlio_os128.csv) 
 
 ### 3.2 Other Data
-Sequence Name|Collection Date|Total Size|Duration|Features|Sensors|Rosbag 
---|:--|:--:|--:|--:|--:|--: 
-LidarsCali|2022-02-11|21.9g|19.1s|room| |(Rosbag: Uploading)  
+Sequence Name|Collection Date|Total Size|Duration|Features|Rosbag 
+--|:--|:--:|--:|--:|--:
+LidarsCali|2022-02-11|21.9g|19.1s|room| [Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/Ea0qTMxHxR5GsHMX62HRjFMBxpdrOrp9fMSfKkxp2e5DAg?e=HmjOoT)) 
 
 
 ## 4. Tested SLAM Result
-### 4.1 Trajectory Result
+ 
 We teseted  some well-known SLAM systems as below:
  
 [LeGO-LOAM](https://github.com/RobustFieldAutonomyLab/LeGO-LOAM),
@@ -137,18 +141,20 @@ We teseted  some well-known SLAM systems as below:
 
 [LIO_LIVOX](https://github.com/Livox-SDK/LIO-Livox),
  
-  
+
+### 4.1 Mapping Quality Result
+<div align=center>
+<img src="./imgs/parking_signal.jpg" width="800px">
+<p align="center">Qualitative comparison of the mapping quality. Top row showm the rgb image, map LIOL Horizon, FLIO OS0. Bottom row shows a parking signs in rgb image, and mapping result from Horizon-based LIOL, Horizon, Avia, OS0, and OS1-based FLIO, and Velodyne's LeGo-LOAM maps, respectively.</p>
+</div>
+
+### 4.22 Trajectory Result
 <div align=center>
 <img src="./imgs/traj_result.jpg" width="800px">
 <p align="center">Estimated trajectories. Top row: Indoor01, Indoor02, Indoor03, Forest02. Bottom row: Forest01, Road02, Indoor04, Indoor05.</p>
 </div>
  
-
-### 4.2 Mapping Quality Result
-<div align=center>
-<img src="./imgs/parking_signal.jpg" width="800px">
-<p align="center">Qualitative comparison of the mapping quality. Top row showm the rgb image, map LIOL Horizon, FLIO OS0. Bottom row shows a parking signs in rgb image, and mapping result from Horizon-based LIOL, Horizon, Avia, OS0, and OS1-based FLIO, and Velodyne's LeGo-LOAM maps, respectively.</p>
-</div>
+ 
 
  
 ## 5.DEVELOPMENT TOOLKITS 
