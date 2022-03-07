@@ -14,7 +14,7 @@
 <img src="./imgs/data_sample.jpg" width="1000px">
 </div>
  
-<p align="left"> Our dataset was captured by a rich suite of sensors. Subsets of the data from the *Indoor04* sequence are visualized here. The leftmost column shows the lidar data from [Avia](https://www.livoxtech.com/avia) and Horizon; the second column shows the lidar data from OS1 and OS0; the third column shows the data from the VLP-16 and depth image from L515. The rightmost column shows the RGB image from L515 and range images from 0S1 and OS0..</p>
+<p align="left"> Our dataset was captured by a rich suite of sensors. Subsets of the data from the Indoor04 sequence are visualized here. The leftmost column shows the lidar data from Livox Avia and Horizon; the second column shows the lidar data from Ouster OS1 and OS0; the third column shows the data from the VLP-16 and depth image from L515. The rightmost column shows the RGB image from L515 and range images from 0S1 and OS0..</p>
  
 
 Indoor data(Calibrate Sequence) |  OpenRoad SLAM example(Road02 Sequence)
@@ -45,12 +45,12 @@ Keywords:Dataset, Multi-model, Multi-scenario, SLAM
  
 
 ## 1.LICENSE
-This work is licensed under MIT license. International License and is provided for academic purpose. If you are interested in our project for commercial purposes, please contact us on qingqli@utu.fi for further communication.  
+This work is licensed under MIT license. International License and is provided for academic purpose. Please contact us on qingqli@utu.fi for further communication.  
 
  
 ## 2.SENSOR SETUP
 ### 2.1 Acquisition Platform
-Physical drawings and schematics of the ground robot is given below. The unit of the figures is centimeter.
+Physical drawings and schematics of the sensor suite is given below. The unit of the figures is centimeter.
 
 <div align=center>
 <img src="./imgs/scales.jpg" width="800px">
@@ -60,13 +60,13 @@ Physical drawings and schematics of the ground robot is given below. The unit of
 
 
 ### 2.2 Sensor parameters
-Sensor specification for the presented dataset. Angular resolution is configurable in the OS1-64 (varying the vertical FoV). Livoxlidars have a non-repetitive scan pattern that delivers higher angular resolution with longer integration times. Range is based on manufacturerinformation, with values corresponding to 80% Lambertian reflectivity and 100 klx sunlight, except for the L515 lidar camera.
+Sensor specification for the presented dataset. Angular resolution is configurable in the OS1-64 (varying the vertical FoV). Livox lidars have a non-repetitive scan pattern that delivers higher angular resolution with longer integration times. Range is based on manufacturerinformation, with values corresponding to 80% Lambertian reflectivity and 100 klx sunlight, except for the L515 lidar camera.
 <div align=center>
 <img src="./imgs/sensors.jpg" width="800px">
 </div>
-
  
 
+### 2.3 ROS topics
 The rostopics of our rosbag sequences are listed as follows:
 
 * VLP-16 LIDAR : \
@@ -101,15 +101,7 @@ The rostopics of our rosbag sequences are listed as follows:
  
 
 ## 3.DATASET SEQUENCES
- 
-
-<!-- <div align=center> -->
-
-<!-- <img src="https://github.com/sjtuyinjie/mypics/blob/main/dynamic.gif" width="400px">
-</div> -->
-
-<!-- <p align="left">Figure 3. A sample video with fish-eye image(both forward-looking and sky-pointing),perspective image,thermal-infrared image,event image and lidar odometry</p> -->
- 
+  
 
 <div align=center>
 <img src="./imgs/data_sequences.jpg" width="600px">
@@ -127,14 +119,14 @@ Indoor01|2022-04-27|49.3g|114s|day|[Rosbag](https://utufi.sharepoint.com/:u:/s/m
 Indoor02|2022-02-21|16.7g|42.3s|day|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/EYXGcc1Z-y1FpnDwQ1geIoEBovXvLfoxZwt36J1_t2PugA?e=UwHhXd)|MOCAP[link](./data/ground_truth/indoor02_optitrack.csv)  
 Indoor03|2021-02-21|19.2g|46.7s|day|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/EVGuZFh7fpBKtQSMKoGb8ncB3Aaow-UoWJnfYyiCd4V9sA?e=bteL7Y)|MOCAP[link](./data/ground_truth/indoor03_optitrack.csv)
 Indoor04(Hall)|2022-02-09|92.8g|248s|day|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/EZn83qXg-FdDhg7qydCROZEBizsL1Y5V7yebYX1ihrHkhg?e=dhIKqu)|SLAM[link](./data/ground_truth/indoor04_fastlio_os128.csv)  
-Indoor05(Corridor)|2022-02-09|141.5g|551s|day|Rosbag: Uploading| SLAM[link](./data/ground_truth/indoor05_fastlio_os128.csv)
+Indoor05(Corridor)|2022-02-09|141.5g|551s|day|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/ETHCdLaWuQBAgSIiJrveYU0BYzUwbQwQPesdvc5W5Gb2Bg?e=R8Ny4o)| SLAM[link](./data/ground_truth/indoor05_fastlio_os128.csv)
 Road01|2022-02-20|47.6g|110s|day|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/EdIVc56d1wVHj2oniOha6bYBWUptX7l8r3GGsd5Ur4DJfQ?e=15ILey)|-   
 Road02|2022-02-20|212.7g|487s|day|Rosbag: Uploading|SLAM [link](./data/ground_truth/road02_fastlio_os128.csv) 
 
 ### 3.2 Other Data
 Sequence Name|Collection Date|Total Size|Duration|Features|Rosbag 
 --|:--|:--:|--:|--:|--:
-LidarsCali|2022-02-11|21.9g|19.1s|room| [Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/Ea0qTMxHxR5GsHMX62HRjFMBxpdrOrp9fMSfKkxp2e5DAg?e=HmjOoT)) 
+LidarsCali|2022-02-11|21.9g|19.1s|room| [Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/Ea0qTMxHxR5GsHMX62HRjFMBxpdrOrp9fMSfKkxp2e5DAg?e=HmjOoT)
 
 
 ## 4. Tested SLAM Result
@@ -180,12 +172,12 @@ For extrinsics between cameras and LIVOX Lidar, visit [
 livox_camera_lidar_calibration](https://github.com/Livox-SDK/livox_camera_lidar_calibration)  
 
 ### 5.4 Sensor Info 
-[Avia](https://www.livoxtech.com/avia),  
-[Horizon](https://www.livoxtech.com/horizon),  
-[OS0](https://ouster.com/products/scanning-lidar/os0-sensor/),    
-[OS1](https://ouster.com/products/scanning-lidar/os1-sensor/) ,   
-[Vlp-16](https://velodynelidar.com/products/puck/),     
-[Realsense L515](https://www.intelrealsense.com/lidar-camera-l515/)  
+[Avia](https://www.livoxtech.com/avia): https://www.livoxtech.com/avia,  
+[Horizon](https://www.livoxtech.com/horizon):https://www.livoxtech.com/horizon,  
+[OS0](https://ouster.com/products/scanning-lidar/os0-sensor/):https://ouster.com/products/scanning-lidar/os0-sensor/,    
+[OS1](https://ouster.com/products/scanning-lidar/os1-sensor/):https://ouster.com/products/scanning-lidar/os1-sensor/,   
+[Vlp-16](https://velodynelidar.com/products/puck/):https://velodynelidar.com/products/puck/,     
+[Realsense L515](https://www.intelrealsense.com/lidar-camera-l515/):https://www.intelrealsense.com/lidar-camera-l515/.
 
 ## 6.ACKNOWLEGEMENT
 This research work is supported by the Academy of Finland's AeroPolis project (Grant 348480) and the Finnish Foundation for Technology Promotion (Grants 7817 and 8089).
