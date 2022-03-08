@@ -240,7 +240,7 @@ Thank you for citing our [*Dataset* paper](https://arxiv.org/pdf/2203.03454v1.pd
 ```
 @article{li2022dataset,
   title={Multi-Modal Lidar Dataset for Benchmarking General-Purpose Localization and Mapping Algorithms},
-  author={ Li, Qingqing and  Yu, Xianjia and Jorge, PePe{\~n}a Queralta and Tomi, Westerlund},
+  author={ Li, Qingqing and  Yu, Xianjia and Jorge, Pe{\~n}a Queralta and Tomi, Westerlund},
   journal={arXiv preprint arXiv:2203.03454},
   year={2022}
 }
