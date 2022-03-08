@@ -181,3 +181,18 @@ livox_camera_lidar_calibration](https://github.com/Livox-SDK/livox_camera_lidar_
 
 ## 6.ACKNOWLEGEMENT
 This research work is supported by the Academy of Finland's AeroPolis project (Grant 348480) and the Finnish Foundation for Technology Promotion (Grants 7817 and 8089).
+
+## Cite *LeGO-LOAM*
+
+Thank you for citing our [*Dataset* paper](https://arxiv.org/pdf/2203.03454v1.pdf) if you think this repo helped you: 
+```
+@article{li2022dataset,
+  title={Multi-Modal Lidar Dataset for Benchmarking General-Purpose Localization and Mapping Algorithms},
+  author={ Li, Qingqing and  Yu, Xianjia and Jorge, PePe{\~n}a Queralta and Tomi, Westerlund},
+  journal={arXiv preprint arXiv:2203.03454},
+  year={2022}
+}
+
+```
+
+ 
