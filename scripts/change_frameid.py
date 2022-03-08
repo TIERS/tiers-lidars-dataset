@@ -69,10 +69,9 @@ frame_ls  = ["avia_frame", "avia_frame", "horizon_frame", "horizon_frame", \
   
 def change_frame_id(inbag,outbag, topics_ls, frame_ls): 
     outbag = rosbag.Bag(outbag,'w')
-    for topic, msg, t in rosbag.Bag(inbag,'r').read_messages(): 
-
+    for topic, msg, t in rosbag.Bag(inbag,'r').read_messages():  
         # Chages the frame_id
-        if topic in topics_frame_ls:
+        if topic in topics_frame_ls: 
             id = topics_frame_ls.index(topic)
             if msg._has_header:
                 print(id, topic,  msg.header.frame_id, "->", frame_ls[id])
@@ -80,15 +79,27 @@ def change_frame_id(inbag,outbag, topics_ls, frame_ls):
         
         print(topic, msg.header.frame_id, msg.header.stamp)
         outbag.write(topic, msg, t)
-    rospy.loginfo('Closing output bagfile and exit...')
+    rospy.loginfo('Save bagfile and Clear...')
     outbag.close()
 
 if __name__ == "__main__":
-    folder_path = "./IROS2022_Dataset/" 
-    in_bag =  folder_path + "st_square_2022-02-08-23-14-55.bag" 
-    reframed_bag = folder_path + "forest02_square.bag"  
+  if(len(sys.argv) > 1):
+    inbag = sys.argv[1]
+    outbag = sys.argv[2]
+ 
+    print("Reveived inbag path  : ", inbag)
+    print("Reveived outbag path : ", outbag)
+    print("=> Processing frame_id alignment ")
+    change_frame_id(inbag, outbag, topics_frame_ls, frame_ls ) 
+  else:
+    print("===>>> Please give inbang path and out bag path like: ")
+    print("python2 change_frameid.py ./st_square_2022-02-08-23-14-55.bag ./reframed.bag")
+
+    # folder_path = "./IROS2022_Dataset/" 
+    # in_bag =  folder_path + "st_square_2022-02-08-23-14-55.bag" 
+    # reframed_bag = folder_path + "forest02_square.bag"  
     
-    print("=> Processing frame_id and timestamp alignment ")
-    change_frame_id(in_bag, reframed_bag, topics_frame_ls, frame_ls ) 
+    # print("=> Processing frame_id alignment ")
+    # change_frame_id(in_bag, reframed_bag, topics_frame_ls, frame_ls ) 
 
  

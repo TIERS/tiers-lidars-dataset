@@ -2,7 +2,7 @@
 <package format="2">
   <name>dataset_tools</name>
   <version>1.0.0</version>
-  <description>The tiers_ros_tools package</description>
+  <description>The dataset tools package</description>
 
   <!-- Maintainers -->
   <maintainer email="qingqli@utu.fi">Qingqing</maintainer>
@@ -34,12 +34,9 @@
   <exec_depend>roscpp</exec_depend>
   <exec_depend>rospy</exec_depend>
   <exec_depend>sensor_msgs</exec_depend>
-  <exec_depend>std_msgs</exec_depend>
-
-
-  <!-- The export tag contains other, unspecified, tags -->
-  <export>
-    <!-- Other tools can request additional information be placed here -->
+  <exec_depend>std_msgs</exec_depend> 
+ 
+  <export> 
 
   </export>
 </package>

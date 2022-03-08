@@ -1,6 +1,6 @@
 <launch>
 
-    <arg name="use_sim_time" default="true" />  
+    <arg name="use_sim_time" default="false" />  
 
     <arg name="model" default="$(find dataset_tools)/config/sensors_suite.urdf"/>   
     <param name="robot_description" command="$(find xacro)/xacro.py $(arg model)" /> 
@@ -9,12 +9,11 @@
  
     <node name="aviaConveter" pkg="dataset_tools" type="aviaFormatConvert" respawn="true" output="screen">
         <remap from="/livox/lidar" to="/avia/livox/lidar"/>
-        <remap from="/livox_ros_points" to="/livox_avia"/> 
-         
+        <remap from="/livox_ros_points" to="/livox_avia"/>  
     </node>
  
     <node name="horizonConveter" pkg="dataset_tools" type="horizonFormatConvert" respawn="true" output="screen"> 
         <remap from="/livox_ros_points" to="/livox_horizon"/>  
     </node> 
-    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find dataset_tools)/config/lidar_calibrate.rviz" />
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find dataset_tools)/config/data_show.rviz" />
 </launch>

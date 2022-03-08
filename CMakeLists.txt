@@ -33,8 +33,6 @@ find_package(OpenCV REQUIRED)
 ###################################
 
 catkin_package(
-  INCLUDE_DIRS include
-  LIBRARIES tiers_ros_tools
   DEPENDS     
     roscpp 
     std_msgs
@@ -62,47 +60,11 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 link_directories(/usr/local/lib)
 set(ROS_LINK_FLAGS "-lopencv_core -lopencv_highgui -lopencv_legacy -lopencv_imgproc -lopencv_features2d")
 
-
-## Declare C++ executables
-add_executable(
-  ${PROJECT_NAME}_pointcloudtransformer
-  src/pointcloudtransformer.cpp
-)
-
-add_executable(
-  ${PROJECT_NAME}_doubleposetransform
-  src/doubleposetransform.cpp
-)
-
+ 
 add_executable(aviaFormatConvert src/aviaFormatConvert.cpp)
 target_link_libraries(aviaFormatConvert ${catkin_LIBRARIES})
 
 add_executable(horizonFormatConvert src/horizonFormatConvert.cpp)
 target_link_libraries(horizonFormatConvert ${catkin_LIBRARIES})
  
-
-## Rename C++ executables without prefix
-set_target_properties(
-  ${PROJECT_NAME}_pointcloudtransformer
-  PROPERTIES OUTPUT_NAME pointcloudtransformer PREFIX ""
-)
-set_target_properties(
-  ${PROJECT_NAME}_doubleposetransform
-  PROPERTIES OUTPUT_NAME _doubleposetransform PREFIX ""
-)
-
-## Link a library or executable target against
-target_link_libraries(
-  ${PROJECT_NAME}_pointcloudtransformer
-  ${catkin_LIBRARIES}
-)
-target_link_libraries(
-  ${PROJECT_NAME}_doubleposetransform
-  ${catkin_LIBRARIES}
-)
-
-target_link_libraries(
-  ${PROJECT_NAME}_doubleposetransform
-  ${Boost_FILESYSTEM_LIBRARY} 
-  ${Boost_SYSTEM_LIBRARY} 
-)
+ 
