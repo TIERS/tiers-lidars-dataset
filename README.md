@@ -182,7 +182,6 @@ livox_camera_lidar_calibration](https://github.com/Livox-SDK/livox_camera_lidar_
 ## 6.ACKNOWLEGEMENT
 This research work is supported by the Academy of Finland's AeroPolis project (Grant 348480) and the Finnish Foundation for Technology Promotion (Grants 7817 and 8089).
 
-## Cite *LeGO-LOAM*
 
 Thank you for citing our [*Dataset* paper](https://arxiv.org/pdf/2203.03454v1.pdf) if you think this repo helped you: 
 ```
