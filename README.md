@@ -1,7 +1,7 @@
 
 
 
-# Multi-Modal Lidar Dataset for Benchmarking General-Purpose Localization and Mapping Algorithms 
+## Multi-Modal Lidar Dataset for Benchmarking General-Purpose Localization and Mapping Algorithms 
 
 <div align=center>
 <img src="./imgs/intro.jpg" width="1000px">
@@ -85,13 +85,12 @@ The rostopics of our rosbag sequences are listed as follows:
             ` /img_nodee/range_image           : sensor_msgs/Image `,       
             ` /img_nodee/reflec_image       : sensor_msgs/Image `,        
             ` /img_nodee/signal_image        : sensor_msgs/Image ` ,  
-
 * Horizon LIDAR : \
-`/livox/imu : sensor_msgs/Imu`            
+`/livox/imu : sensor_msgs/Imu`,            
                 `/livox/lidar : livox_ros_driver/CustomMsg ` 
 * AVIA LIDAR : \
-    `/avia/livox/imu  sensor_msgs/Imu `,
-    `/avia/livox/lidar  livox_ros_driver/CustomMsg`,
+    `/avia/livox/imu : sensor_msgs/Imu `, 
+    `/avia/livox/lidar : livox_ros_driver/CustomMsg`,
 * L515 LIDAR CAMERA: \
     `/cam_1/color/image_raw             : sensor_msgs/Image `,        
     `/cam_1/depth/image_rect_raw            : sensor_msgs/Image `,
@@ -113,17 +112,22 @@ The rostopics of our rosbag sequences are listed as follows:
 
 Sequence Name|Collection Date|Total Size|Duration|Features|Rosbag|GroundTruth
 --|:--|:--:|--:|--:|--:|--:
-Forest01|2022-02-08|21.9g|62s|Winter,night,Square|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/ERuiTeOtX5FGs4GJPH9-DhYBQO-FUQkat3u4sSKwwpduPg?e=HfJXdP)| MOCAP[link](./data/ground_truth/forest01_optitrack.csv)
-Forest02|2022-02-08|22.4g|73s|Windter,night,Straight| [Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/EQjHj-L7UzhMuYoD9RzAJd0BdydMpIsy1ci7sdXvfgUzsA?e=wjeCOi)|MOCAP[link](./data/ground_truth/forest02_optitrack.csv)
+Forest01|2022-02-08|21.9g|62s|Winter,night,Square|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/ERuiTeOtX5FGs4GJPH9-DhYBQO-FUQkat3u4sSKwwpduPg?e=HfJXdP)| MOCAP [link](./data/ground_truth/forest01_optitrack.csv)
+Forest02|2022-02-08|22.4g|73s|Windter,night,Straight| [Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/EQjHj-L7UzhMuYoD9RzAJd0BdydMpIsy1ci7sdXvfgUzsA?e=wjeCOi)|MOCAP [link](./data/ground_truth/forest02_optitrack.csv)
 Forest03|2021-09-28|7.3g|717s|Autumn,forest.long|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/ESw3g6p8c8hIia1_ffZLQQoB6jz2YoZX5E5j2A8EuuxcFg?e=qU6972)| -
-Indoor01(easy)|2022-04-27|49.3g|114s|day,indoor,office|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/EawwFYGOurRNlcUZfvrwEfcBlnW20VTIYCPLm5VJieeHWw?e=CLjB2n)|MOCAP[link](./data/ground_truth/indoor01_optitrack.csv)  
-Indoor02(medium)|2022-02-21|16.7g|42.3s|day, indoor,office|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/EYXGcc1Z-y1FpnDwQ1geIoEBovXvLfoxZwt36J1_t2PugA?e=UwHhXd)|MOCAP[link](./data/ground_truth/indoor02_optitrack.csv)  
-Indoor03(diffcult)|2021-02-21|19.2g|46.7s|day,indoor,office|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/EVGuZFh7fpBKtQSMKoGb8ncB3Aaow-UoWJnfYyiCd4V9sA?e=bteL7Y)|MOCAP[link](./data/ground_truth/indoor03_optitrack.csv)
-Indoor04(Hall)|2022-02-09|92.8g|248s|day,indoor,Hall|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/EZn83qXg-FdDhg7qydCROZEBizsL1Y5V7yebYX1ihrHkhg?e=dhIKqu)|SLAM[link](./data/ground_truth/indoor04_fastlio_os128.csv)  
-Indoor05(Corridor)|2022-02-09|141.5g|551s|day,indoor,corridor|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/ETHCdLaWuQBAgSIiJrveYU0BYzUwbQwQPesdvc5W5Gb2Bg?e=R8Ny4o)| SLAM[link](./data/ground_truth/indoor05_fastlio_os128.csv)
+Indoor01(easy)|2022-04-27|49.3g|114s|day,indoor,office|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/EawwFYGOurRNlcUZfvrwEfcBlnW20VTIYCPLm5VJieeHWw?e=CLjB2n)|MOCAP [link](./data/ground_truth/indoor01_optitrack.csv)  
+Indoor02(medium)|2022-02-21|16.7g|42.3s|day, indoor,office|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/EYXGcc1Z-y1FpnDwQ1geIoEBovXvLfoxZwt36J1_t2PugA?e=UwHhXd)|MOCAP [link](./data/ground_truth/indoor02_optitrack.csv)  
+Indoor03(diffcult)|2021-02-21|19.2g|46.7s|day,indoor,office|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/EVGuZFh7fpBKtQSMKoGb8ncB3Aaow-UoWJnfYyiCd4V9sA?e=bteL7Y)|MOCAP [link](./data/ground_truth/indoor03_optitrack.csv)
+Indoor04(Hall)|2022-02-09|92.8g|248s|day,indoor,Hall|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/EZn83qXg-FdDhg7qydCROZEBizsL1Y5V7yebYX1ihrHkhg?e=dhIKqu)|SLAM [link](./data/ground_truth/indoor04_fastlio_os128.csv)  
+Indoor05(Corridor)|2022-02-09|141.5g|551s|day,indoor,corridor|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/ETHCdLaWuQBAgSIiJrveYU0BYzUwbQwQPesdvc5W5Gb2Bg?e=R8Ny4o)| SLAM [link](./data/ground_truth/indoor05_fastlio_os128.csv)
 Road01|2022-02-20|47.6g|110s|day,short road|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/EdIVc56d1wVHj2oniOha6bYBWUptX7l8r3GGsd5Ur4DJfQ?e=15ILey)|-   
-Road02|2022-02-20|212.7g|487s|day,long road|Rosbag: Uploading|SLAM [link](./data/ground_truth/road02_fastlio_os128.csv) 
+Road02|2022-02-20|212.7g|487s|day,long road|[Rosbag*](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/EQU61kjdUWxNpbWnx85yqAMBY5IHPPgTlyd_JPo2lQa5kg?e=Jnszkc)|SLAM [link](./data/ground_truth/road02_fastlio_os128.csv) 
 
+* Note: For sequence Road02, please decompress the rosbag first 
+    ~~~
+    rosbag decompress road02.bag  
+    ~~~
+* Note: For sequence Forest03 and Road01, the SLAM results are not provided, therefore end users can generate SLAM results. Other sequences that in MoCAP system unavailable environment, SLAM result are generated from FAST_LIO with OS0 (128 Channels) lidar.
 ### 3.2 Other Data
 Sequence Name|Collection Date|Total Size|Duration|Features|Rosbag 
 --|:--|:--:|--:|--:|--:
