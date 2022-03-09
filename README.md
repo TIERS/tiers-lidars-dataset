@@ -44,11 +44,11 @@ Keywords:Dataset, Multi-model, Multi-scenario, SLAM
 2022.03.01   uploads initial dataset
  
 
-## 1.LICENSE
+## 1. LICENSE
 This work is licensed under MIT license. International License and is provided for academic purpose. Please contact us on qingqli@utu.fi for further communication.  
 
  
-## 2.SENSOR SETUP
+## 2. SENSOR SETUP
 ### 2.1 Acquisition Platform
 Physical drawings and schematics of the sensor suite is given below. The unit of the figures is centimeter.
 
@@ -99,7 +99,7 @@ The rostopics of our rosbag sequences are listed as follows:
  
  
 
-## 3.DATASET SEQUENCES
+## 3. DATASET SEQUENCES
   
 
 <div align=center>
@@ -158,7 +158,7 @@ We teseted  some well-known SLAM systems as below:
 </div>
  
   
-## 5.DEVELOPMENT TOOLKITS 
+## 5. DEVELOPMENT TOOLKITS 
 ### 5.1 Frame_ID reset
 Rosbag recoreds message with their raw frame_id. If user need to show or run multiple lidar same time, we use [srv_tools](https://github.com/srv/srv_tools) to change frame_id of each topics. To install srv_tools, please follow [srv_tools installation](https://wiki.ros.org/srv_tools).
 
@@ -237,11 +237,12 @@ livox_camera_lidar_calibration](https://github.com/Livox-SDK/livox_camera_lidar_
 [Vlp-16](https://velodynelidar.com/products/puck/):https://velodynelidar.com/products/puck/,     
 [Realsense L515](https://www.intelrealsense.com/lidar-camera-l515/):https://www.intelrealsense.com/lidar-camera-l515/.
 
-## 6.ACKNOWLEGEMENT
+## 6. ACKNOWLEGEMENT
+
 This research work is supported by the Academy of Finland's AeroPolis project (Grant 348480) and the Finnish Foundation for Technology Promotion (Grants 7817 and 8089).
 
 
-Thank you for citing our [*Dataset* paper](https://arxiv.org/pdf/2203.03454v1.pdf) if you think this repo helped you: 
+Please cite our [*Dataset* paper](https://arxiv.org/pdf/2203.03454v1.pdf) if the code or data in this repo helps your work: 
 ```
 @article{li2022dataset,
   title={Multi-Modal Lidar Dataset for Benchmarking General-Purpose Localization and Mapping Algorithms},
