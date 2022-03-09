@@ -147,6 +147,7 @@ We teseted  some well-known SLAM systems as below:
  
 
 ### 4.1 Mapping Quality Result
+
 <div align=center>
 <img src="./imgs/parking_signal.jpg" width="800px">
 <p align="center">Qualitative comparison of the mapping quality. Top row showm the rgb image, map LIOL Horizon, FLIO OS0. Bottom row shows a parking signs in rgb image, and mapping result from Horizon-based LIOL, Horizon, Avia, OS0, and OS1-based FLIO, and Velodyne's LeGo-LOAM maps, respectively.</p>
@@ -160,7 +161,9 @@ We teseted  some well-known SLAM systems as below:
  
   
 ## 5. DEVELOPMENT TOOLKITS 
+
 ### 5.1 Frame_ID reset
+
 Rosbag recoreds message with their raw frame_id. If user need to show or run multiple lidar same time, we use [srv_tools](https://github.com/srv/srv_tools) to change frame_id of each topics. To install srv_tools, please follow [srv_tools installation](https://wiki.ros.org/srv_tools).
 
 Then fllow the commands below:
@@ -187,20 +190,23 @@ Ubuntu 64-bit 16.04 or 18.04.
 ROS Kinetic or Melodic. [ROS Installation](http://wiki.ros.org/ROS/Installation) and its additional ROS pacakge:
 
 ```
-    sudo apt-get install ros-XXX-cv-bridge ros-XXX-tf ros-XXX-message-filters ros-XXX-image-transport
+    sudo apt-get install ros-${ROS_DISTRO}-cv-bridge ros-${ROS_DISTRO}-tf ros-${ROS_DISTRO}-message-filters ros-${ROS_DISTRO}-image-transport
 ```
-**NOTICE:** remember to replace "XXX"  to your ROS distributions, for example, if your use ROS-melodic, the command should be:
+**NOTE"" You need to source your ROS installation for the `$ROS_DISTRO` env variable to be defined. For example, if your use ROS-melodic, the command should be:
 
 ```
     sudo apt-get install ros-melodic-cv-bridge ros-melodic-tf ros-melodic-message-filters ros-melodic-image-transport
 ```
+
 ### 5.2.2 **PCL**
+
 Follow [PCL Installation](http://www.pointclouds.org/downloads/linux.html).
 
 ### 5.2.3 **LiVOX ROS Driver**
-To visualize data, we need install Livox LiDAR SDK by following [Livox-ros-driver installation](https://github.com/Livox-SDK/livox_ros_driver) 
 
-### 5.2.4 **Download and Compile This Package**
+To visualize data, we need install the Livox LiDAR SDK. Follow instructions [Livox-ros-driver installation](https://github.com/Livox-SDK/livox_ros_driver) 
+
+### 5.2.4 **Download and compile this package**
 
 ~~~
 cd ~/catkin_ws/src
@@ -217,20 +223,22 @@ roslaunch dataset_tools data_show.launch
 
  
 ### 5.3 Evaluation
+
 We use open-source tool [evo](https://github.com/MichaelGrupp/evo) for evalutation. 
 
-To evaluate LIDAR SLAM,type 
+To evaluate LIDAR SLAM, you can run: 
 ~~~
 evo_ape tum optk.txt {SLAM_result}.txt -a -p
 ~~~
 
 ### 5.4 Calibration 
-For IMU intrinsics,visit [Imu_utils](https://github.com/gaowenliang/imu_utils)
- 
-For extrinsics between cameras and LIVOX Lidar, visit [
-livox_camera_lidar_calibration](https://github.com/Livox-SDK/livox_camera_lidar_calibration)  
 
-### 5.5 Sensor Info 
+For IMU intrinsics, visit [Imu_utils](https://github.com/gaowenliang/imu_utils)
+ 
+For extrinsics between cameras and LIVOX Lidar, visit [livox_camera_lidar_calibration](https://github.com/Livox-SDK/livox_camera_lidar_calibration)  
+
+### 5.5 Sensor details and datasheets
+
 [Avia](https://www.livoxtech.com/avia): https://www.livoxtech.com/avia,  
 [Horizon](https://www.livoxtech.com/horizon):https://www.livoxtech.com/horizon,  
 [OS0](https://ouster.com/products/scanning-lidar/os0-sensor/):https://ouster.com/products/scanning-lidar/os0-sensor/,    
@@ -247,7 +255,7 @@ Please cite our [*Dataset* paper](https://arxiv.org/pdf/2203.03454v1.pdf) if the
 ```
 @article{li2022dataset,
   title={Multi-Modal Lidar Dataset for Benchmarking General-Purpose Localization and Mapping Algorithms},
-  author={ Li, Qingqing and  Yu, Xianjia and Jorge, Pe{\~n}a Queralta and Tomi, Westerlund},
+  author={ Li, Qingqing and  Yu, Xianjia and Pe{\~n}a Queralta, Jorge and Westerlund, Tomi},
   journal={arXiv preprint arXiv:2203.03454},
   year={2022}
 }
