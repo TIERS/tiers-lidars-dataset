@@ -22,11 +22,12 @@ Indoor data(Calibrate Sequence) |  OpenRoad SLAM example(Road02 Sequence)
 ![](./imgs/sample_data.gif)  |  ![](./imgs/road_data.gif)
 Forest SLAM example(Forest01 Sequence) |  Hall SLAM example(Indoor04 Sequence)
 ![](./imgs/forest_data.gif)  |  ![](./imgs/hall_data.gif)
+
 ## ABSTRACT:
 
-This is a novel multi-modal lidar dataset with sensors showcasing different scanning modalities (spinning and solid-state), sensing technologies, and lidar cameras. The focus of the dataset is on low-drift odometry, with ground truth data available in both indoors and outdoors environment with sub-millimeter accuracy from a motion capture (MOCAP) system. For comparison in longer distances, we also include data recorded in larger spaces indoors and outdoors.The dataset contains point cloud data from spinning lidars and solid-state lidars. Also, it provides range images from high resolution spinning lidars, RGB and depth images from a lidar camera, and inertial data from built-in IMUs.
+We present a novel multi-modal lidar dataset with sensors showcasing different scanning modalities (spinning and solid-state), sensing technologies, and lidar cameras. The focus of the dataset is on low-drift odometry, with ground truth data available in both indoors and outdoors environments with sub-millimeter accuracy from a motion capture (MOCAP) system. For comparison in longer distances, we also include data recorded in larger spaces indoors and outdoors.The dataset contains point cloud data from spinning lidars and solid-state lidars. Also, it provides range images from high resolution spinning lidars, RGB and depth images from a lidar camera, and inertial data from built-in IMUs.
 
-Keywords:Dataset, Multi-model, Multi-scenario, SLAM
+Keywords: Lidar, Dataset, Multi-modal, Multi-scenario, SLAM, Solid-state lidars
 
 ## MAIN CONTRIBUTIONS: 
 
