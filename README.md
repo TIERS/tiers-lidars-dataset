@@ -46,11 +46,14 @@ Keywords: Lidar, Dataset, Multi-modal, Multi-scenario, SLAM, Solid-state lidars
  
 
 ## 1. LICENSE
-This work is licensed under MIT license. International License and is provided for academic purpose. Please contact us on qingqli@utu.fi for further communication.  
+
+This work is licensed under the MIT license and is provided for academic purpose. Please contact us at qingqli@utu.fi for further information.  
 
  
 ## 2. SENSOR SETUP
+
 ### 2.1 Acquisition Platform
+
 Physical drawings and schematics of the sensor suite is given below. The unit of the figures is centimeter.
 
 <div align=center>
@@ -114,7 +117,7 @@ The rostopics of our rosbag sequences are listed as follows:
 Sequence Name|Collection Date|Total Size|Duration|Features|Rosbag|GroundTruth
 --|:--|:--:|--:|--:|--:|--:
 Forest01|2022-02-08|21.9g|62s|Winter,night,Square|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/ERuiTeOtX5FGs4GJPH9-DhYBQO-FUQkat3u4sSKwwpduPg?e=HfJXdP)| MOCAP [link](./data/ground_truth/forest01_optitrack.csv)
-Forest02|2022-02-08|22.4g|73s|Windter,night,Straight| [Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/EQjHj-L7UzhMuYoD9RzAJd0BdydMpIsy1ci7sdXvfgUzsA?e=wjeCOi)|MOCAP [link](./data/ground_truth/forest02_optitrack.csv)
+Forest02|2022-02-08|22.4g|73s|Winter,night,Straight| [Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/EQjHj-L7UzhMuYoD9RzAJd0BdydMpIsy1ci7sdXvfgUzsA?e=wjeCOi)|MOCAP [link](./data/ground_truth/forest02_optitrack.csv)
 Forest03|2021-09-28|7.3g|717s|Autumn,forest.long|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/ESw3g6p8c8hIia1_ffZLQQoB6jz2YoZX5E5j2A8EuuxcFg?e=qU6972)| -
 Indoor01(easy)|2022-04-27|49.3g|114s|day,indoor,office|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/EawwFYGOurRNlcUZfvrwEfcBlnW20VTIYCPLm5VJieeHWw?e=CLjB2n)|MOCAP [link](./data/ground_truth/indoor01_optitrack.csv)  
 Indoor02(medium)|2022-02-21|16.7g|42.3s|day, indoor,office|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/EYXGcc1Z-y1FpnDwQ1geIoEBovXvLfoxZwt36J1_t2PugA?e=UwHhXd)|MOCAP [link](./data/ground_truth/indoor02_optitrack.csv)  
