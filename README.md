@@ -23,6 +23,8 @@ Indoor data(Calibrate Sequence) |  OpenRoad SLAM example(Road02 Sequence)
 Forest SLAM example(Forest01 Sequence) |  Hall SLAM example(Indoor04 Sequence)
 ![](./imgs/forest_data.gif)  |  ![](./imgs/hall_data.gif)
 
+The dataset is available at the [University of Turku servers](https://utufi.sharepoint.com/:f:/s/msteams_0ed7e9/EidIYx-aBBFCgsR0pptbzHwBeNiJZSzUBtGcPMcXEXix6w?e=g18kMN). Specific links for each sequence and for the ground truth data are available in Section 3.1 of this file.
+
 ## ABSTRACT:
 
 We present a novel multi-modal lidar dataset with sensors showcasing different scanning modalities (spinning and solid-state), sensing technologies, and lidar cameras. The focus of the dataset is on low-drift odometry, with ground truth data available in both indoors and outdoors environments with sub-millimeter accuracy from a motion capture (MOCAP) system. For comparison in longer distances, we also include data recorded in larger spaces indoors and outdoors.The dataset contains point cloud data from spinning lidars and solid-state lidars. Also, it provides range images from high resolution spinning lidars, RGB and depth images from a lidar camera, and inertial data from built-in IMUs.
@@ -42,7 +44,8 @@ Keywords: Lidar, Dataset, Multi-modal, Multi-scenario, SLAM, Solid-state lidars
 
 
 ## Updates 
-2022.03.01   uploads initial dataset
+
+2022.03.01   Initial dataset upload
  
 
 ## 1. LICENSE
@@ -52,18 +55,19 @@ This work is licensed under the MIT license and is provided for academic purpose
  
 ## 2. SENSOR SETUP
 
-### 2.1 Acquisition Platform
+### 2.1 Data acquisition platform
 
 Physical drawings and schematics of the sensor suite is given below. The unit of the figures is centimeter.
 
 <div align=center>
 <img src="./imgs/scales.jpg" width="800px">
 </div>
-<p align="center">Our data collecting platform, front view RGB (left),top view (middle) and front view (right).</p>
+<p align="center">Our data collecting platform, front view RGB (left), top view (middle) and front view (right).</p>
 
 
 
 ### 2.2 Sensor parameters
+
 Sensor specification for the presented dataset. Angular resolution is configurable in the OS1-64 (varying the vertical FoV). Livox lidars have a non-repetitive scan pattern that delivers higher angular resolution with longer integration times. Range is based on manufacturerinformation, with values corresponding to 80% Lambertian reflectivity and 100 klx sunlight, except for the L515 lidar camera.
 <div align=center>
 <img src="./imgs/sensors.jpg" width="800px">
@@ -112,7 +116,7 @@ The rostopics of our rosbag sequences are listed as follows:
  <p align="center">(V: Velodyne VLP-16, H:Livox Horizon, A:Livox Avia, O_0: Ouster OS0, O_1: Ouster OS1.</p>
 </div>
 
-### 3.1 Main Dataset
+### 3.1 Main dataset
 
 Sequence Name|Collection Date|Total Size|Duration|Features|Rosbag|GroundTruth
 --|:--|:--:|--:|--:|--:|--:
@@ -132,31 +136,34 @@ Road02|2022-02-20|212.7g|487s|day,long road|[Rosbag*](https://utufi.sharepoint.c
     rosbag decompress road02.bag  
     ~~~
 * Note: For sequence Forest03 and Road01, the SLAM results are not provided, therefore end users can generate SLAM results. Other sequences that in MoCAP system unavailable environment, SLAM result are generated from FAST_LIO with OS0 (128 Channels) lidar.
-### 3.2 Other Data
+
+
+### 3.2 Other data
+
 Sequence Name|Collection Date|Total Size|Duration|Features|Rosbag 
 --|:--|:--:|--:|--:|--:
 LidarsCali|2022-02-11|21.9g|19.1s|room| [Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/Ea0qTMxHxR5GsHMX62HRjFMBxpdrOrp9fMSfKkxp2e5DAg?e=HmjOoT)
 
 
-## 4. Tested SLAM Result
+## 4. SLAM RESULTS
  
-We teseted  some well-known SLAM systems as below:
+We teseted some well-known lidar SLAM methods, which are listed below:
  
-[LeGO-LOAM](https://github.com/RobustFieldAutonomyLab/LeGO-LOAM),
+* [LeGO-LOAM](https://github.com/RobustFieldAutonomyLab/LeGO-LOAM)
  
-[FAST_LIO](https://github.com/hku-mars/FAST_LIO),
+* [FAST_LIO](https://github.com/hku-mars/FAST_LIO)
 
-[LIO_LIVOX](https://github.com/Livox-SDK/LIO-Livox),
+* [LIO_LIVOX](https://github.com/Livox-SDK/LIO-Livox)
  
 
-### 4.1 Mapping Quality Result
+### 4.1 Mapping quality results
 
 <div align=center>
 <img src="./imgs/parking_signal.jpg" width="800px">
 <p align="center">Qualitative comparison of the mapping quality. Top row showm the rgb image, map LIOL Horizon, FLIO OS0. Bottom row shows a parking signs in rgb image, and mapping result from Horizon-based LIOL, Horizon, Avia, OS0, and OS1-based FLIO, and Velodyne's LeGo-LOAM maps, respectively.</p>
 </div>
 
-### 4.22 Trajectory Result
+### 4.22 Trajectory results
 <div align=center>
 <img src="./imgs/traj_result.jpg" width="800px">
 <p align="center">Estimated trajectories. Top row: Indoor01, Indoor02, Indoor03, Forest02. Bottom row: Forest01, Road02, Indoor04, Indoor05.</p>
@@ -169,7 +176,7 @@ We teseted  some well-known SLAM systems as below:
 
 Rosbag recoreds message with their raw frame_id. If user need to show or run multiple lidar same time, we use [srv_tools](https://github.com/srv/srv_tools) to change frame_id of each topics. To install srv_tools, please follow [srv_tools installation](https://wiki.ros.org/srv_tools).
 
-Then fllow the commands below:
+Then follow the commands below:
 ~~~
 cd ./scripts/                                              # Go to scripts folder
 python2  change_frameid.py [inbag_path] [outbag_path]      # Specify bag path
@@ -188,14 +195,17 @@ Note: This script will transform the raw frame_id to new one(right) as based on 
 ~~~
 
 ### 5.2 Visulize Data
+
 ### 5.2.1 **Ubuntu** and **ROS**
+
 Ubuntu 64-bit 16.04 or 18.04.
 ROS Kinetic or Melodic. [ROS Installation](http://wiki.ros.org/ROS/Installation) and its additional ROS pacakge:
 
 ```
     sudo apt-get install ros-${ROS_DISTRO}-cv-bridge ros-${ROS_DISTRO}-tf ros-${ROS_DISTRO}-message-filters ros-${ROS_DISTRO}-image-transport
 ```
-**NOTE"" You need to source your ROS installation for the `$ROS_DISTRO` env variable to be defined. For example, if your use ROS-melodic, the command should be:
+
+**NOTE** You need to source your ROS installation for the `$ROS_DISTRO` env variable to be defined. For example, if your use ROS-melodic, the command should be:
 
 ```
     sudo apt-get install ros-melodic-cv-bridge ros-melodic-tf ros-melodic-message-filters ros-melodic-image-transport
