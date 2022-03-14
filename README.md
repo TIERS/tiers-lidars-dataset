@@ -14,7 +14,7 @@
 <img src="./imgs/data_sample.jpg" width="1000px">
 </div>
  
-<p align="left"> Our dataset was captured by a rich suite of sensors. Subsets of the data from the Indoor04 sequence are visualized here. The leftmost column shows the lidar data from Livox Avia and Horizon; the second column shows the lidar data from Ouster OS1 and OS0; the third column shows the data from the VLP-16 and depth image from L515. The rightmost column shows the RGB image from L515 and range images from 0S1 and OS0..</p>
+<p align="left"> Our dataset was captured by a rich suite of sensors. Subsets of the data from the Indoor04 sequence are visualized here. The leftmost column shows the lidar data from Livox Avia and Horizon; the second column shows the lidar data from Ouster OS1 and OS0; the third column shows the data from the VLP-16 and depth image from L515. The rightmost column shows the RGB image from L515 and range images from 0S1 and OS0.</p>
  
 
 Indoor data(Calibrate Sequence) |  OpenRoad SLAM example(Road02 Sequence)
@@ -101,9 +101,9 @@ The rostopics of our rosbag sequences are listed as follows:
         `/avia/livox/lidar : livox_ros_driver/CustomMsg`,
 * L515 LIDAR CAMERA: \
     `/cam_1/color/image_raw             : sensor_msgs/Image `,        
-    `/cam_1/depth/image_rect_raw            : sensor_msgs/Image `,
+    `/cam_1/depth/image_rect_raw        : sensor_msgs/Image `,
 * MOCAP SYSTEM:  \
-    `/vrpn_client_node/optitest/pose    6471 msgs    : geometry_msgs/PoseStamped`
+    `/vrpn_client_node/optitest/pose   : geometry_msgs/PoseStamped`
  
  
 
