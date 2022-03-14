@@ -97,8 +97,8 @@ The rostopics of our rosbag sequences are listed as follows:
 `/livox/imu : sensor_msgs/Imu`,            
                 `/livox/lidar : livox_ros_driver/CustomMsg ` 
 * AVIA LIDAR : \
-    `/avia/livox/imu : sensor_msgs/Imu `,
-    `/avia/livox/lidar : livox_ros_driver/CustomMsg`,
+    `/avia/livox/imu : sensor_msgs/Imu `, \
+        `/avia/livox/lidar : livox_ros_driver/CustomMsg`,
 * L515 LIDAR CAMERA: \
     `/cam_1/color/image_raw             : sensor_msgs/Image `,        
     `/cam_1/depth/image_rect_raw            : sensor_msgs/Image `,
