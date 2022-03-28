@@ -246,6 +246,33 @@ evo_ape tum optk.txt {SLAM_result}.txt -a -p
 
 ### 5.4 Calibration 
 
+## Lidars Extrinsic
+We provide a tool for extrinsic parameters between lidars that can calculate the extrinsic parameter based on GICP methods. As the OS0 has the highest FOV, we first rotate the coordinate of OS0 sensor 45 degrees to align its X-axis with Horizon, Avia and Velodyne. Then the rotated coordinate is treated as "base_link". All clouds from other lidar are matched with the "base_link" coordinate. For Avia, Horizon, we integrated the first five frames to increase point cloud density and reduce its low FOV impact.
+
+To use this tools, first play one rosbag from our dataset:
+~~~
+rosbag play  ICT_OUT_2022-02-20-17-34-49.bag --clock
+~~~
+Then run our calibration launch file:
+~~~
+roslaunch dataset_tools lidars_extri_comp.launch
+~~~
+
+Then you can find the calculated parameter, and its transformed cloud;
+~~~
+OS0 -> base_link 0 0 0 0.785398       -0        0 /os0_sensor /base_link 10
+OS1 -> base_link  0.0100882   0.581502 -0.0210581  2.34826  3.12619 -3.13066 /os1_sensor /base_link 10
+velo -> base_link -0.164831  0.173188  0.117624 3.07795 3.09161 3.12807 /velo_sensor /base_link 10
+Avia -> base_link -0.0608374    0.29663  -0.122276  0.00549421 0.000246092   -0.011555 /avia_frame /base_link 10
+hori -> base_link 0.00345477   0.145195  -0.134907 3.12905 3.14022 3.12706 /hori_frame /base_link 10
+~~~
+
+The RVIZ window will be opened and show the aligned point cloud.
+<div align=left>
+<img src="./imgs/calibrate.jpg" width="400">
+
+
+## IMU 
 For IMU intrinsics, visit [Imu_utils](https://github.com/gaowenliang/imu_utils)
  
 For extrinsics between cameras and LIVOX Lidar, visit [livox_camera_lidar_calibration](https://github.com/Livox-SDK/livox_camera_lidar_calibration)  

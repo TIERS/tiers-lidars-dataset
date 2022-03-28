@@ -67,4 +67,7 @@ target_link_libraries(aviaFormatConvert ${catkin_LIBRARIES})
 add_executable(horizonFormatConvert src/horizonFormatConvert.cpp)
 target_link_libraries(horizonFormatConvert ${catkin_LIBRARIES})
  
+add_executable(lidarsExtrinsicComp src/lidars_extrinsic_comp.cpp)
+target_link_libraries(lidarsExtrinsicComp ${catkin_LIBRARIES})
+ 
  
