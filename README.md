@@ -131,22 +131,33 @@ Indoor05(Corridor)|2022-02-09|141.5g|551s|day,indoor,corridor|[Rosbag](https://u
 Road01|2022-02-20|47.6g|110s|day,short road|[Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/EdIVc56d1wVHj2oniOha6bYBWUptX7l8r3GGsd5Ur4DJfQ?e=15ILey)|-   
 Road02|2022-02-20|212.7g|487s|day,long road|[Rosbag*](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/EQU61kjdUWxNpbWnx85yqAMBY5IHPPgTlyd_JPo2lQa5kg?e=Jnszkc)|SLAM [link](./data/ground_truth/road02_fastlio_os128.csv) 
 
+
+  
 * Note: For sequence Road02, please decompress the rosbag first 
     ~~~
     rosbag decompress road02.bag  
     ~~~
 * Note: For sequence Forest03 and Road01, the SLAM results are not provided, therefore end users can generate SLAM results. Other sequences that in MoCAP system unavailable environment, SLAM result are generated from FAST_LIO with OS0 (128 Channels) lidar.
 
+### 3.2 Ground Truth:
+The meaning of each column in ground truth files is as follows:  
+~~~
+timestamp, pose.position.x,  pose.position.y,  pose.position.z, roll, pitch, yaw, pose.orientation.x, pose.orientation.y, pose.orientation.z, pose.orientation.w. 
+~~~
 
-### 3.2 Other data
+In the MOCAP system available environment, the ground truth data from the MOCAP system are recorded in rosbag. The user can generate the ground truth file by himself. A Script named 'result_sub_ros.py' is provided in the scripts folder to record the result and save it into a CSV file.
+~~~
+python2 result_sub_ros.py
+~~~
+
+### 3.3 Other data
 
 Sequence Name|Collection Date|Total Size|Duration|Features|Rosbag 
 --|:--|:--:|--:|--:|--:
 LidarsCali|2022-02-11|21.9g|19.1s|room| [Rosbag](https://utufi.sharepoint.com/:u:/s/msteams_0ed7e9/Ea0qTMxHxR5GsHMX62HRjFMBxpdrOrp9fMSfKkxp2e5DAg?e=HmjOoT)
 
 
-## 4. SLAM RESULTS
- 
+## 4. SLAM RESULTS 
 We teseted some well-known lidar SLAM methods, which are listed below:
  
 * [LeGO-LOAM](https://github.com/RobustFieldAutonomyLab/LeGO-LOAM)
