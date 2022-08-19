@@ -1,7 +1,7 @@
 
-
-
 ## Multi-Modal Lidar Dataset for Benchmarking General-Purpose Localization and Mapping Algorithms 
+
+Welcome to TIERS lidars dataset! Our paper has been accpected by IEEE IROS 2022. You can check our paper [here].(https://arxiv.org/pdf/2203.03454v1.pdf)
 
 <div align=center>
 <img src="./imgs/intro.jpg" width="1000px">
@@ -301,7 +301,6 @@ For extrinsics between cameras and LIVOX Lidar, visit [livox_camera_lidar_calibr
 
 This research work is supported by the Academy of Finland's AeroPolis project (Grant 348480) and the Finnish Foundation for Technology Promotion (Grants 7817 and 8089).
 
-
 Please cite our [*Dataset* paper](https://arxiv.org/pdf/2203.03454v1.pdf) if the code or data in this repo helps your work: 
 ```
 @article{li2022dataset,
@@ -312,5 +311,4 @@ Please cite our [*Dataset* paper](https://arxiv.org/pdf/2203.03454v1.pdf) if the
 }
 
 ```
-
  
