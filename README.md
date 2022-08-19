@@ -1,7 +1,7 @@
 
-## Multi-Modal Lidar Dataset for Benchmarking General-Purpose Localization and Mapping Algorithms 
+## Multi-Modal Lidars Dataset for Benchmarking General-Purpose Localization and Mapping Algorithms 
 
-Welcome to TIERS lidars dataset! Our paper has been accpected by IEEE IROS 2022. You can check our paper [here].(https://arxiv.org/pdf/2203.03454v1.pdf)
+Welcome to TIERS lidars dataset! Our paper has been accpected by IEEE IROS 2022. You can check our paper [here](https://arxiv.org/pdf/2203.03454v1.pdf).
 
 <div align=center>
 <img src="./imgs/intro.jpg" width="1000px">
