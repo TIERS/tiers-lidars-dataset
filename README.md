@@ -297,7 +297,7 @@ For extrinsics between cameras and LIVOX Lidar, visit [livox_camera_lidar_calibr
 [Vlp-16](https://velodynelidar.com/products/puck/):https://velodynelidar.com/products/puck/,     
 [Realsense L515](https://www.intelrealsense.com/lidar-camera-l515/):https://www.intelrealsense.com/lidar-camera-l515/.
 
-# Star History
+## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=TIERS/tiers-lidars-dataset&type=Date)](https://star-history.com/#TIERS/tiers-lidars-dataset&Date)
 
