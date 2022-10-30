@@ -1,7 +1,8 @@
 
 ## Multi-Modal Lidars Dataset for Benchmarking General-Purpose Localization and Mapping Algorithms 
 
-Welcome to TIERS lidars dataset! Our paper has been accepted by IEEE IROS 2022. You can check our paper [here](https://arxiv.org/pdf/2203.03454v1.pdf).
+Welcome to TIERS lidars dataset! Our paper has been accepted by IEEE IROS 2022. You can check our paper [here](https://arxiv.org/pdf/2203.03454v1.pdf) and slides [here](https://utufi.sharepoint.com/:b:/s/msteams_0ed7e9/EY6GPAiHZtVFp3W1ie49ZvwBnvD7Sx8vDq-t6Hq22JH_JQ?e=I3qvka).
+An enhanced version of this dataset has been open-sourced [here](https://github.com/TIERS/tiers-lidars-dataset-enhanced), which provides ICP-based ground-truth in indoor environment and GNSS/RTK-based ground-truth in outdoor road environment, and sensors are synchronized with Precision Time Protocol(PTP). 
 
 <div align=center>
 <img src="./imgs/intro.jpg" width="1000px">
