@@ -1,7 +1,7 @@
 
 ## Multi-Modal Lidars Dataset for Benchmarking General-Purpose Localization and Mapping Algorithms 
 
-Welcome to TIERS lidars dataset! Our paper has been accepted by IEEE IROS 2022. You can check our paper [here](https://arxiv.org/pdf/2203.03454v1.pdf) and slides [here](https://utufi.sharepoint.com/:b:/s/msteams_0ed7e9/EY6GPAiHZtVFp3W1ie49ZvwBnvD7Sx8vDq-t6Hq22JH_JQ?e=I3qvka).
+Welcome to TIERS lidars dataset! Our paper has been accepted by IEEE IROS 2022. You can check our paper in [IEEE](https://ieeexplore.ieee.org/abstract/document/9981078) or [arxiv](https://arxiv.org/pdf/2203.03454v1.pdf) and slides [here](https://utufi.sharepoint.com/:b:/s/msteams_0ed7e9/EY6GPAiHZtVFp3W1ie49ZvwBnvD7Sx8vDq-t6Hq22JH_JQ?e=I3qvka)).
 An enhanced version of this dataset has been open-sourced [here](https://github.com/TIERS/tiers-lidars-dataset-enhanced), which provides ICP-based ground-truth in indoor environment and GNSS/RTK-based ground-truth in outdoor road environment, and sensors are synchronized with Precision Time Protocol(PTP). 
 
 <div align=center>
@@ -306,13 +306,15 @@ For extrinsics between cameras and LIVOX Lidar, visit [livox_camera_lidar_calibr
 
 This research work is supported by the Academy of Finland's AeroPolis project (Grant 348480) and the Finnish Foundation for Technology Promotion (Grants 7817 and 8089).
 
-Please cite our [*Dataset* paper](https://arxiv.org/pdf/2203.03454v1.pdf) if the code or data in this repo helps your work: 
+Please cite our *Dataset* paper in [IEEE](https://ieeexplore.ieee.org/abstract/document/9981078) or [arxiv](https://arxiv.org/pdf/2203.03454v1.pdf) if the code or data in this repo helps your work: 
 ```
-@article{li2022dataset,
-  title={Multi-Modal Lidar Dataset for Benchmarking General-Purpose Localization and Mapping Algorithms},
-  author={ Li, Qingqing and  Yu, Xianjia and Pe{\~n}a Queralta, Jorge and Westerlund, Tomi},
-  journal={arXiv preprint arXiv:2203.03454},
-  year={2022}
+@inproceedings{qingqing2022multi,
+  title={Multi-modal lidar dataset for benchmarking general-purpose localization and mapping algorithms},
+  author={Qingqing, Li and Xianjia, Yu and Queralta, Jorge Pena and Westerlund, Tomi},
+  booktitle={2022 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  pages={3837--3844},
+  year={2022},
+  organization={IEEE}
 }
 
 ```
